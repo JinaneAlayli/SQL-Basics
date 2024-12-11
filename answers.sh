@@ -13,11 +13,35 @@
 "SELECT Points FROM students WHERE Name = 'Alex';"
 
 # Add yourself as a new student (your name, your age...)
-"INSERT INTO students VALUES (NULL, 'Jinane', 29, 'Female', 50)"
+"INSERT INTO students VALUES (NULL, 'Jinane', 29, 'Female', 50);"
 
 #  Increase the points of **Basma** because she solved a new exercise
-"UPDATE students SET Points = Points + 10 WHERE Name = 'Basma';"
+"UPDATE students SET Points = Points + 20 WHERE Name = 'Basma';"
 
 # Decrease the points of **Alex** because he’s late today
-"UPDATE students SET Points = Points - 5 WHERE Name = 'Alex';"
-###################################################################################
+"UPDATE students SET Points = Points - 25 WHERE Name = 'Alex';"
+
+############################################# 
+
+### Creating Table
+
+"
+    CREATE TABLE graduates (
+        ID INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+        Name TEXT NOT NULL,
+        Age INTEGER,
+        Gender TEXT,
+        Points INTEGER,
+        Graduation TEXT
+    );
+"
+#Copy Layal's data from **students** to **graduates**
+"INSERT INTO graduates (Name, Age, Gender, Points) SELECT Name, Age, Gender, Points FROM students WHERE Name = 'Layal';"
+
+#Add the graduation date previously mentioned to Layal's record in **graduates**
+" UPDATE graduates SET Graduation = '2018-09-08' WHERE Name = 'Layal';"
+
+#Remove Layal's record from **students**
+"DELETE FROM students WHERE Name = 'Layal';"
+
+ ############################################# 
