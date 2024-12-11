@@ -70,3 +70,40 @@ JOIN employees ON companies.Name = employees.Company
 WHERE employees.Role = 'Graphic Designer';
 "
  ############################################# 
+
+### Count & Filter
+
+#the person with the highest number of points in **students**
+"
+SELECT Name
+FROM students
+WHERE Points = (SELECT MAX(Points) FROM students);
+"
+# Find the average of points in **students**
+"
+SELECT AVG(Points) AS AveragePoints
+FROM students;
+"
+
+#Find the number of students that have 500 points
+"
+SELECT COUNT(*) AS NumberOfStudentsHave500pt
+FROM students
+WHERE Points = 500;
+
+"
+
+#Find the names of students that contains 's'
+"
+SELECT Name
+FROM students
+WHERE Name LIKE '%s%';
+"
+
+#Find all students based on the decreasing order of their points
+"
+SELECT *
+FROM students
+ORDER BY Points DESC;
+"
+ 
