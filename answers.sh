@@ -45,3 +45,28 @@
 "DELETE FROM students WHERE Name = 'Layal';"
 
  ############################################# 
+
+ 
+### Joins
+
+ #Produce a table that contains, for each employee, his/her name, company name, and company date.
+"SELECT employees.Name AS Employee, companies.Name AS Company, companies.Date AS Date
+FROM employees
+JOIN companies ON employees.Company = companies.name;"
+
+#Find the name of **employees** that work in companies made before 2000.
+"
+SELECT employees.Name
+FROM employees
+JOIN companies ON employees.Company = companies.Name
+WHERE companies.Date < 2000;
+"
+
+#Find the name of company that has a graphic designer.
+"
+SELECT companies.Name
+FROM companies
+JOIN employees ON companies.Name = employees.Company
+WHERE employees.Role = 'Graphic Designer';
+"
+ ############################################# 
